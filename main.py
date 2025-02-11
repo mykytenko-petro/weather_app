@@ -1,3 +1,5 @@
 import modules
 
-modules.app.mainloop()
+#Запускає додаток
+if __name__ == "__main__":
+    modules.app.mainloop()
