@@ -1,5 +1,5 @@
 import customtkinter as ctk
-from .read_json import read_json
+from ..read_json import read_json
 
 config = read_json('config.json')
 #Створюємо клас для додатку
