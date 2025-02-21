@@ -1,0 +1,44 @@
+{
+    "coord": {
+        "lon": 34.9833,
+        "lat": 48.45
+    },
+    "weather": [
+        {
+            "id": 801,
+            "main": "Clouds",
+            "description": "кілька хмар",
+            "icon": "02n"
+        }
+    ],
+    "base": "stations",
+    "main": {
+        "temp": -6.76,
+        "feels_like": -11.29,
+        "temp_min": -6.76,
+        "temp_max": -6.76,
+        "pressure": 1040,
+        "humidity": 81,
+        "sea_level": 1040,
+        "grnd_level": 1027
+    },
+    "visibility": 10000,
+    "wind": {
+        "speed": 2.71,
+        "deg": 27,
+        "gust": 6.3
+    },
+    "clouds": {
+        "all": 13
+    },
+    "dt": 1740157312,
+    "sys": {
+        "country": "UA",
+        "sunrise": 1740112624,
+        "sunset": 1740150638
+    },
+    "timezone": 7200,
+    "id": 709930,
+    "name": "Dnipro",
+    "cod": 200
+}
