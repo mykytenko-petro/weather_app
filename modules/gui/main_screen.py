@@ -1,7 +1,7 @@
 import customtkinter as ctk
-from ..read_json import read_json
+from ..read_json import *
 
-config = read_json('config.json')
+config = read('config.json')
 #Створюємо клас для додатку
 class App(ctk.CTk):
     def __init__(self, name: str, width: int, height: int):

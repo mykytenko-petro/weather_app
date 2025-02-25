@@ -1,44 +1,45 @@
 {
     "coord": {
-        "lon": 34.9833,
-        "lat": 48.45
+        "lon": 14.4208,
+        "lat": 50.088
     },
     "weather": [
         {
-            "id": 801,
+            "id": 804,
             "main": "Clouds",
-            "description": "кілька хмар",
-            "icon": "02n"
+            "description": "хмарно",
+            "icon": "04n"
         }
     ],
     "base": "stations",
     "main": {
-        "temp": -6.76,
-        "feels_like": -11.29,
-        "temp_min": -6.76,
-        "temp_max": -6.76,
-        "pressure": 1040,
-        "humidity": 81,
-        "sea_level": 1040,
-        "grnd_level": 1027
+        "temp": 6.09,
+        "feels_like": 3.43,
+        "temp_min": 5.34,
+        "temp_max": 7.03,
+        "pressure": 1015,
+        "humidity": 83,
+        "sea_level": 1015,
+        "grnd_level": 980
     },
-    "visibility": 10000,
+    "visibility": 7000,
     "wind": {
-        "speed": 2.71,
-        "deg": 27,
-        "gust": 6.3
+        "speed": 3.6,
+        "deg": 70
     },
     "clouds": {
-        "all": 13
+        "all": 100
     },
-    "dt": 1740157312,
+    "dt": 1740510127,
     "sys": {
-        "country": "UA",
-        "sunrise": 1740112624,
-        "sunset": 1740150638
+        "type": 2,
+        "id": 2010430,
+        "country": "CZ",
+        "sunrise": 1740462844,
+        "sunset": 1740501422
     },
-    "timezone": 7200,
-    "id": 709930,
-    "name": "Dnipro",
+    "timezone": 3600,
+    "id": 3067696,
+    "name": "Prague",
     "cod": 200
 }

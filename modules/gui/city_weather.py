@@ -1,8 +1,10 @@
 import customtkinter as ctk
 from .side_bar import menu
-from ..read_json import read_json
+from ..read_json import *
+from ..weather_data import get_info_weather
+from datetime import datetime, timezone, timedelta
 
-list_city = read_json('config.json')["list_city"]
+list_city = read('config.json')["list_city"]
 
 class CityFrame(ctk.CTkFrame):
     def __init__(self, city_name: str, master_ch: ctk.CTkScrollableFrame):
@@ -17,14 +19,27 @@ class CityFrame(ctk.CTkFrame):
             fg_color = "#096C82"
         ) 
         self.pack(pady = 20)
+        get_info_weather(city_name)
+        self.DATA = read("weather_data.json")
+        temp = round(self.DATA['main']['temp'])
+        temp_min = round(self.DATA['main']['temp_min'])
+        temp_max = round(self.DATA['main']['temp_max'])
+
+        unix_time = self.DATA['dt']
+        timez = timedelta(seconds=self.DATA['timezone'])
+        # 
+        time = (datetime.fromtimestamp(unix_time, timezone.utc) + timez).strftime("%H:%M")
+        # 
+        
+        description = self.DATA['weather'][0]['description'].capitalize()
         # CTkLabel - создает текст
         self.TEMP = ctk.CTkLabel(
-            text = "-8°",
+            text = f"{temp}°",
             master = self,
             font = ("Roboto Slab", 50, "bold"),
             text_color = "#FFFFFF"
         )
-        self.TEMP.place(x = 155, y = 4)
+        self.TEMP.place(x = 230, y = 5, anchor = "ne")
         self.CITY = ctk.CTkLabel(
             master = self,
             font = ("Roboto Slab", 16, "bold"),
@@ -35,7 +50,7 @@ class CityFrame(ctk.CTkFrame):
         self.TIME = ctk.CTkLabel(
             master = self,
             font = ("Roboto Slab", 12, "bold"),
-            text = '12:30',
+            text = time,
             text_color = '#FFFFFF',
             height = 18
         )
@@ -43,17 +58,17 @@ class CityFrame(ctk.CTkFrame):
         self.DESC = ctk.CTkLabel(
             master = self,
             font = ("Roboto Slab", 12),
-            text = 'Description.',
+            text = description,
             text_color = '#b5d3d9'
         )
-        self.DESC.place(x = 15, y = 70)
+        self.DESC.place(x = 15, y = 65)
         self.TEMP_MIN_MAX = ctk.CTkLabel(
             master = self,
             font = ("Roboto Slab", 12),
-            text = "макс: 11°, мін: 4°",
+            text = f"макс: {temp_max}°, мін: {temp_min}°",
             text_color = '#b5d3d9'
         )
-        self.TEMP_MIN_MAX.place(x = 126, y = 70)
+        self.TEMP_MIN_MAX.place(x = 225, y = 65, anchor = "ne")
 
 for city_name in list_city:
     city = CityFrame(city_name, menu)
