@@ -25,10 +25,9 @@ class CityFrame(ctk.CTkFrame):
         temp_min = round(self.DATA['main']['temp_min'])
         temp_max = round(self.DATA['main']['temp_max'])
 
-        unix_time = self.DATA['dt']
         timez = timedelta(seconds=self.DATA['timezone'])
         # 
-        time = (datetime.fromtimestamp(unix_time, timezone.utc) + timez).strftime("%H:%M")
+        time = (datetime.now(timezone.utc) + timez).strftime("%H:%M")
         # 
         
         description = self.DATA['weather'][0]['description'].capitalize()
@@ -43,7 +42,7 @@ class CityFrame(ctk.CTkFrame):
         self.CITY = ctk.CTkLabel(
             master = self,
             font = ("Roboto Slab", 16, "bold"),
-            text = str(city_name),
+            text = str(self.DATA["name"]),
             text_color = '#FFFFFF'
         )
         self.CITY.place(x = 15, y = 12)
