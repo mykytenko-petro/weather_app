@@ -19,7 +19,7 @@ class CityFrame(ctk.CTkFrame):
             fg_color = "#096C82"
         ) 
         self.pack(pady = 20)
-        get_info_weather(city_name)
+        get_info_weather(city_name, "weather_data.json", False)
         self.DATA = read("weather_data.json")
         temp = round(self.DATA['main']['temp'])
         temp_min = round(self.DATA['main']['temp_min'])

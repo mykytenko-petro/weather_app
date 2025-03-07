@@ -29,6 +29,6 @@ class WeatherImage(ctk.CTkLabel):
         )
 
 first_city = read("config.json")["list_city"][0]
-get_info_weather(first_city)
+get_info_weather(first_city, "weather_data.json", False)
 main_image = WeatherImage(170, 160, app, 'weather_data.json')
 main_image.place(x = 380, y = 170)
