@@ -5,37 +5,37 @@
     },
     "weather": [
         {
-            "id": 801,
+            "id": 802,
             "main": "Clouds",
-            "description": "кілька хмар",
-            "icon": "02n"
+            "description": "уривчасті хмари",
+            "icon": "03n"
         }
     ],
     "base": "stations",
     "main": {
-        "temp": 10.55,
-        "feels_like": 9.07,
-        "temp_min": 10.55,
-        "temp_max": 10.55,
-        "pressure": 1023,
-        "humidity": 54,
-        "sea_level": 1023,
-        "grnd_level": 1011
+        "temp": 13.85,
+        "feels_like": 12.86,
+        "temp_min": 13.85,
+        "temp_max": 13.85,
+        "pressure": 1014,
+        "humidity": 60,
+        "sea_level": 1014,
+        "grnd_level": 1002
     },
     "visibility": 10000,
     "wind": {
-        "speed": 2.44,
-        "deg": 298,
-        "gust": 3.63
+        "speed": 2.88,
+        "deg": 197,
+        "gust": 4.72
     },
     "clouds": {
-        "all": 12
+        "all": 44
     },
-    "dt": 1741366918,
+    "dt": 1741971780,
     "sys": {
         "country": "UA",
-        "sunrise": 1741320598,
-        "sunset": 1741361551
+        "sunrise": 1741924537,
+        "sunset": 1741966984
     },
     "timezone": 7200,
     "id": 709930,

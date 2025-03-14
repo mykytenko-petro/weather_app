@@ -7,10 +7,11 @@ from ..weather_data import *
 # PIL (Pillow) - модуль для роботы с картинками
 
 class WeatherImage(ctk.CTkLabel):
-    def __init__(self, width: int, height: int, master: ctk.CTk | ctk.CTkFrame, name_json: str):
+    def __init__(self, width: int, height: int, master: ctk.CTk | ctk.CTkFrame, name_json: str, count: int = None):
         self.WIDTH = width
         self.HEIGHT = height
         self.NAME_JSON = name_json
+        self.count = count 
         ctk.CTkLabel.__init__(
             self,
             master,
@@ -19,6 +20,8 @@ class WeatherImage(ctk.CTkLabel):
         )
     def load_img(self):
         data_weather = read(self.NAME_JSON)
+        if self.count != None:
+            data_weather = data_weather["list"][self.count]
         name_image = data_weather["weather"][0]["icon"]
         path_image = os.path.abspath(__file__ + f'/../../../images/{name_image}.png')
         # PIL.Image.open - открывает/создает картинку 
