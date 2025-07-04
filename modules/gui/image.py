@@ -7,7 +7,7 @@ from ..weather_data import *
 # PIL (Pillow) - модуль для роботы с картинками
 
 class WeatherImage(ctk.CTkLabel):
-    def __init__(self, width: int, height: int, master: ctk.CTk | ctk.CTkFrame, name_json: str, count: int = None):
+    def __init__(self, width: int, height: int, master: ctk.CTk | ctk.CTkFrame, name_json: str, count: int = 0):
         self.WIDTH = width
         self.HEIGHT = height
         self.NAME_JSON = name_json
